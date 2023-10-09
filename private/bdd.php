@@ -19,16 +19,21 @@ class bdd {
         }
     }
 
-    public function exec($requete) {
+    public function insert($table, $donnees) {
+        $colonnes = implode(", ", array_keys($donnees));
+        $valeurs = "'" . implode("', '", $donnees) . "'";
+
+        $requete = "INSERT INTO $table ($colonnes) VALUES ($valeurs)";
+
         $resultat = $this->connexion->query($requete);
 
         if ($resultat) {
-            return $resultat;
+            return $this->connexion->insert_id;
         } else {
-            die("Erreur lors de l'exécution de la requête : " . $this->connexion->error);
+            die("Erreur lors de l'insertion : " . $this->connexion->error);
         }
     }
-
+    
     public function close() {
         $this->connexion->close();
     }
