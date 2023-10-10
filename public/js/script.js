@@ -10,15 +10,13 @@ function getQuestion(){
     http.open("GET", url, true);
     //http.setRequestHeader("Content-Type");
     http.onload = () => {
-        console.log(JSON.parse(atob(http.response)));
-        
+        var questions = JSON.parse(atob(http.response));
+        console.log(questions.response);
+        localStorage.setItem("questions", questions.response);  
     }
 
     http.send();
 } 
-
-
-getQuestion();
 
 
 const btntest = document.getElementById("test");
