@@ -13,3 +13,12 @@
 .col1 {
     border-right: 2.5px solid black;
 }
+
+nav {
+    background-color: #E0AFA0 !important;
+}
+
+button {
+    background-color: #6c6059 !important;
+    color: white !important;
+}
