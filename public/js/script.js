@@ -2,25 +2,23 @@ function displayQuestion(){
 
 }
 
-function getQuestion(){
-
-    const url = "http://workshop.com/private/get_question.php";
+async function getQuestion() {
+    const url = "http://localhost/Workshop-I1/private/get_question.php";
 
     const http = new XMLHttpRequest();
     http.open("GET", url, true);
-    //http.setRequestHeader("Content-Type");
-    http.onload = () => {
-        var questions = JSON.parse(atob(http.response));
-        console.log(questions.response);
-        localStorage.setItem("questions", questions.response);  
-    }
 
-    http.send();
-} 
+    return new Promise((resolve, reject) => {
+        http.onload = () => {
+            var questions = JSON.parse(atob(http.response));
+            localStorage.setItem("questions", JSON.stringify(questions.response));
+            resolve(); // Résoudre la promesse une fois que les données sont prêtes
+        }
 
+        http.onerror = () => {
+            reject(new Error("Erreur lors de la requête")); // Rejeter la promesse en cas d'erreur
+        }
 
-const btntest = document.getElementById("test");
-btntest.addEventListener("click", function(){
-    console.log("wrking");
-    getQuestion();
-});
+        http.send();
+    });
+}

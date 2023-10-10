@@ -1,24 +1,162 @@
 <!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
-  <link rel="stylesheet" href="../css/style.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+          integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/style.css">
 
-  <title>Hello, world!</title>
+    <title>Hello, world!</title>
 </head>
 <body>
 <nav class="navbar navbar-light">
-  <a class="navbar-brand" href="../../index.php">
-    <img src="/docs/4.6/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
-    Bootstrap
-  </a>
+    <a class="navbar-brand" href="../../index.php">
+        <img src="/docs/4.6/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top"
+             alt="">
+        Bootstrap
+    </a>
 </nav>
-<button id="test">test</button>
+<!-- <button id="test">test</button> -->
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col">
+            <div class="start-btn">
+                <button type="button" id="btn-start" class="btn" style="background-color: green !important;">Commencer
+                </button>
+                <div id="counter" style="display: none"></div>
+            </div>
+            <div class="card mx-auto card-quizz w-50">
+                <div class="card-body">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col col1">
+                                <div class="joueur1">
+                                    <p id="player-results-quizz1">Joueur 1</p>
+                                    <p id="chrono-player1">04:52:23</p>
+                                </div>
+                            </div>
+                            <div class="col col2">
+                                <div class="joueur2">
+                                    <p id="player-results-quizz2">Joueur 2</p>
+                                    <p id="chrono-player2">02:48:17</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="card mx-auto card-quizz-question w-75">
+                                    <div class="card-body">
+                                        **Le fils d’une employée est malade et l’école lui demande de venir le chercher
+                                        ; il est 15h. Son collègue, d’un ton agacé, lui dit :**
+
+                                        **« Vous les femmes vous avez un prétexte tout trouvé pour quitter le travail en
+                                        pleine après-midi, ça sert d’avoir des gosses ! »**
+
+                                        **Il s’agit d’un agissement sexiste :**
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row response-block">
+                            <div class="col">
+                                <button type="button" class="btn response1">Vrai</button>
+                            </div>
+                            <div class="col">
+                                <button type="button" class="btn response2">Faux</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<button id="test2">Joueur 1</button>
+<button id="test1">Joueur 2</button>
+
 <script src="./../js/script.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+        crossorigin="anonymous"></script>
+
+<script>
+    let i = 0;
+    let questions = main();
+    function main() {
+        getQuestion();
+
+        var localStorageQuestions = localStorage.getItem("questions");
+        return JSON.parse(localStorageQuestions);
+    }
+
+    getOneQuestion(questions, i);
+
+    function getOneQuestion(questions, in) {
+        console.log("test " + JSON.stringify(questions[in]['id']));
+
+        in++;
+    }
+
+    var btn_start = document.getElementById("btn-start");
+    btn_start.addEventListener("click", start);
+
+    function start() {
+        btn_start.style.display = "none";
+
+        var counterElement = document.getElementById("counter");
+        counterElement.style.display = "block";
+        counterElement.style.backgroundColor = "white";
+        counterElement.style.fontSize = "30px";
+        counterElement.style.fontWeight = "bold";
+        var counterValue = 3;
+
+        counterElement.innerText = counterValue;
+
+        var interval = setInterval(function () {
+            counterValue--;
+
+            if (counterValue === 0) {
+                counterElement.style.color = "green";
+                counterElement.innerText = "C'est parti !";
+            } else if (counterValue > 0) {
+                counterElement.innerText = counterValue;
+            } else {
+                clearInterval(interval);
+                counterElement.style.display = "none";
+                player1Round();
+            }
+        }, 1000);
+    }
+
+    document.getElementById("test1").addEventListener("click", player2Round);
+    document.getElementById("test2").addEventListener("click", player1Round);
+    var player1 = document.getElementsByClassName("col1")[0];
+    var player2 = document.getElementsByClassName("col2")[0];
+    var cardQuizzQuestion = document.getElementsByClassName("card-quizz-question")[0];
+    var responseBlock = document.getElementsByClassName("response-block")[0];
+
+    function player2Round() {
+        responseBlock.style.display = "flex";
+        player1.style.opacity = "0.25";
+        player2.style.opacity = "1";
+        cardQuizzQuestion.style.display = "block";
+        cardQuizzQuestion.style.borderColor = "#ef2929";
+    }
+
+    function player1Round() {
+        responseBlock.style.display = "flex";
+        player1.style.opacity = "1";
+        player2.style.opacity = "0.25";
+        cardQuizzQuestion.style.display = "block";
+        cardQuizzQuestion.style.borderColor = "#16c9c9";
+    }
+</script>
 
 <!-- Option 2: Separate Popper and Bootstrap JS -->
 <!--
