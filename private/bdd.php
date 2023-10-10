@@ -1,12 +1,15 @@
 <?php
-class bdd {
+
+class bdd
+{
     private $serveur;
     private $utilisateur;
     private $motDePasse;
     private $baseDeDonnees;
     private $connexion;
 
-    public function __construct() {
+    public function __construct()
+    {
         $this->serveur = "127.0.0.1";
         $this->utilisateur = "root";
         $this->motDePasse = "";
@@ -19,7 +22,23 @@ class bdd {
         }
     }
 
-    public function insert($table, $donnees) {
+    public function getQuestions()
+    {
+        $reponse = $this->connexion->query("SELECT * FROM questions ORDER BY RAND() LIMIT 12;");
+        
+        if ($reponse->num_rows > 0) {
+            $result = array();
+            while ($row = $reponse->fetch_assoc()) {
+                $result[] = $row;
+            }
+            return $result;
+        } else {
+            return array();
+        }
+    }
+
+    public function insert($table, $donnees)
+    {
         $colonnes = implode(", ", array_keys($donnees));
         $valeurs = "'" . implode("', '", $donnees) . "'";
 
@@ -33,8 +52,9 @@ class bdd {
             die("Erreur lors de l'insertion : " . $this->connexion->error);
         }
     }
-    
-    public function close() {
+
+    public function close()
+    {
         $this->connexion->close();
     }
 }
