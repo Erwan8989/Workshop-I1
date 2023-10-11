@@ -22,18 +22,18 @@
         <div class="col col1">
             <div class="playerName mx-auto">
                 <p id="player-results1">Joueur 1</p>
+                <p id="player-time-results1">Joueur 1</p>
             </div>
         </div>
         <div class="col">
             <div class="playerName mx-auto">
                 <p id="player-results2">Joueur 2</p>
+                <p id="player-time-results2">Joueur 2</p>
             </div>
         </div>
     </div>
     <div class="row">
-        <div class="col win">
-            a gagné 🎉
-        </div>
+        <div class="col win"></div>
     </div>
 </div>
 
@@ -138,19 +138,22 @@
 
 <div class="pourcentage">
     <div class="score player1">
-        <span>Score joueur 1</span><span class="number">83%</span>
+        <span class="player1-score"></span><span class="number">83%</span>
     </div>
     <div class="score player2">
-        <span>Score joueur 2</span><span class="number">66%</span>
+        <span class="player2-score"></span><span class="number">66%</span>
     </div>
 </div>
 
 <div class="result-end">
-    <button class="btn btn-info" id="accueil" type="button">Retour a la page d'accueil</button>
+    <a href="../../index.php"><button class="btn btn-info" id="accueil" type="button">Retour a la page d'accueil</button></a>
 </div>
 
-<script src="./../js/results.js"></script>
+<script src="parameters.html"></script>
+<script src="./../js/script.js"></script>
 <script src="./../js/timer.js"></script>
+<script src="./../js/quizz.js"></script>
+<script src="./../js/results.js"></script>
 <script crossorigin="anonymous"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>

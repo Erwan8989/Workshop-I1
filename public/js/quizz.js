@@ -8,14 +8,12 @@ function main() {
 
 // Fonction pour afficher une seule question
 function getOneQuestion(questions, ii) {
-    if (i === 12) {
+    if (i === 3) {
         finish();
     }
 
     let bonneReponse = null;
     let reponses = [];
-
-    console.log(questions)
 
     questionText.innerHTML = questions[ii]['description'];
 
@@ -120,6 +118,9 @@ function getOneQuestion(questions, ii) {
 }
 
 function finish() {
+    localStorage.setItem("finalTime1", timer1.getCountdownDuration());
+    localStorage.setItem("finalTime2", timer2.getCountdownDuration());
+
     localStorage.setItem("questions", JSON.stringify(questions));
     window.location.href = "results.html";
 }
@@ -229,3 +230,5 @@ setInterval(function () {
     }
 }, 10);
 
+
+/*********** RESULTS PAGE *****************/
