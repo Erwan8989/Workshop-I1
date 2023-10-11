@@ -49,7 +49,7 @@
                         <div class="row">
                             <div class="col">
                                 <div class="card mx-auto card-quizz-question w-75">
-                                    <div class="card-body block-question" id="question-text"></div>
+                                    <div class="card-body block-question mb-4" id="question-text"></div>
                                 </div>
                             </div>
                         </div>
@@ -103,10 +103,14 @@
 
     // Fonction pour afficher une seule question
     function getOneQuestion(questions, ii) {
+        if (i === 12) {
+            finish();
+        }
+        
         let bonneReponse = null;
         let reponses = [];
 
-        console.log(questions[ii])
+        console.log(questions)
 
         questionText.innerHTML = questions[ii]['description'];
 
@@ -133,22 +137,22 @@
         let container = document.getElementsByClassName("response-block")[0];
         container.innerHTML = "";
 
-        for (let i = 0; i < reponses.length; i++) {
+        for (let j = 0; j < reponses.length; j++) {
             let newDiv = document.createElement("div");
             newDiv.className = "col";
 
             let newButton = document.createElement("button");
             newButton.type = "button";
-            newButton.className = "btn response" + i;
-            newButton.textContent = reponses[i];
+            newButton.className = "btn mb-2 response" + j;
+            newButton.textContent = reponses[j];
 
             newButton.addEventListener("click", function () {
-                questions[ii]['reponse_donnees'] = reponses[i];
+                questions[ii]['reponse_donnees'] = reponses[j];
 
                 let allButtons = document.querySelectorAll('.response-block button');
                 allButtons.forEach(button => button.disabled = true);
 
-                if (reponses[i] === bonneReponse) {
+                if (reponses[j] === bonneReponse) {
                     if (playerName === "player1") {
                         timer1.addTime(1000);
                         joueur1Add.style.display = "flex";
@@ -200,18 +204,13 @@
                     joueur1Add.style.display = "none";
                     joueur2Add.style.display = "none";
 
+                    i++;
                     getOneQuestion(questions, i);
                 }, 2500);
             });
 
             newDiv.appendChild(newButton);
             container.appendChild(newDiv);
-        }
-
-        i++;
-
-        if (i === 13) {
-            finish();
         }
     }
 
