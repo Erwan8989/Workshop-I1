@@ -194,6 +194,9 @@ let joueur2Remove = document.getElementById("joueur2-remove");
 let timer1 = new Timer(6000, "chrono-player1");
 let timer2 = new Timer(6000, "chrono-player2");
 
+timer1.updateTimer();
+timer2.updateTimer();
+
 const playerName1 = localStorage.getItem("player1") ? localStorage.getItem("player1") : "Joueur 1";
 const playerName2 = localStorage.getItem("player2") ? localStorage.getItem("player2") : "Joueur 2";
 document.getElementById("player-results-quizz1").innerHTML = playerName1;
