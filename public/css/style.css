@@ -23,8 +23,8 @@ nav {
 }
 
 button {
-    background-color: #6c6059 !important;
-    color: white !important;
+    background-color: #6c6059 ;
+    color: white ;
 }
 
 .card-quizz {
@@ -72,3 +72,59 @@ button {
     width: fit-content;
     background-color: green !important;
 }
+
+
+
+/**************** PAGE RULTATS **********************/
+
+
+.winner{
+    font-size: large;
+    text-align: center;
+}
+
+.question-section{
+    background-color: rgba(17,75,95, 0.1);
+    padding: 10px;
+}
+
+.question-section:nth-child(odd){
+    display: flex;
+    justify-content: flex-end;
+    background-color: rgba(171,78,104, 0.1);
+}
+
+
+.question-container{
+   max-width: 70%;
+}
+
+.question-number{
+    margin-top: 10px;
+    text-align: center;
+    font-weight: bold;
+    color: #114B5F;
+}
+
+.question-number-2{
+    margin-top: 10px;
+    text-align: center;
+    font-weight: bold;
+    color: #AB4E68;
+}
+
+.question-text{
+    margin-bottom: 20px;
+}
+
+
+.question-response{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.right{
+   float: right !important;
+}
+

@@ -14,16 +14,7 @@ class Timer {
             this.ticker = setInterval(() => {
                 if(this.countdownDuration > 0){
                     this.countdownDuration--;
-                    var secs = Math.floor(this.countdownDuration / 100);
-                    var hundredSecs = this.countdownDuration % 100;
-                    var mins = Math.floor(secs / 60);
-                    secs %= 60;
-                    var timer = 
-                        ((mins < 10) ? "0" : "") + mins + ":" +
-                        ((secs < 10) ? "0" : "") + secs + ":" +
-                        ((hundredSecs < 10) ? "0" : "") + hundredSecs;
-                    
-                    document.getElementById(this.element).innerHTML = timer;
+                    this.updateTimer();
                 }
                 else {
                     clearInterval(this.ticker);
@@ -42,6 +33,7 @@ class Timer {
 
     reset(){
         this.countdownDuration = this.startingDuration;
+        this.updateTimer();
     }
 
     addTime(toadd){
@@ -51,19 +43,32 @@ class Timer {
                 if(this.countdownDuration > this.startingDuration){
                   this.countdownDuration = this.startingDuration;
                 } 
-              }
+                this.updateTimer();
+            }  
         }
     }
 
     removeTime(toremove){
-        if(this.isRunning){
             if(this.countdownDuration > 0){
                 this.countdownDuration = this.countdownDuration - parseInt(toremove);
                 if(this.countdownDuration <= 0){
                     this.stop;
                 }
+                this.updateTimer();
             }
-        }
+    }
+
+    updateTimer(){
+        var secs = Math.floor(this.countdownDuration / 100);
+                    var hundredSecs = this.countdownDuration % 100;
+                    var mins = Math.floor(secs / 60);
+                    secs %= 60;
+                    var timer = 
+                        ((mins < 10) ? "0" : "") + mins + ":" +
+                        ((secs < 10) ? "0" : "") + secs + ":" +
+                        ((hundredSecs < 10) ? "0" : "") + hundredSecs;
+                    
+        document.getElementById(this.element).innerHTML = timer;
     }
 }
 
