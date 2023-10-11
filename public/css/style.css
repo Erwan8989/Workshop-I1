@@ -105,7 +105,8 @@ button {
 
 .question-section{
     background-color: rgba(17,75,95, 0.1);
-    padding: 10px;
+    padding: 30px 15px;
+    margin: 3px;
 }
 
 .question-section:nth-child(odd){
@@ -120,7 +121,6 @@ button {
 }
 
 .question-number{
-    margin-top: 10px;
     text-align: center;
     font-weight: bold;
     color: #114B5F;
@@ -137,6 +137,23 @@ button {
     margin-bottom: 20px;
 }
 
+.pourcentage{
+    display: flex;
+    justify-content: space-around;
+}
+
+.pourcentage .score{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-weight: bold;
+    font-size: 150%;
+}
+
+.score .number{
+    font-size: 300%;
+}
+
 
 .question-response{
     display: flex;
@@ -148,6 +165,21 @@ button {
    float: right !important;
 }
 
+.result-end{
+    height: 100px;
+    text-align: center;
+    padding: 30px;
+}
+
+.player1{
+    color: #114B5F;
+}
+
+.player2{
+    color: #AB4E68;
+}
+
+/****   OTHER ****/
 .btn.nok {
     background-color: red !important;
 }
@@ -176,3 +208,4 @@ button {
 .playerName {
     text-align: center;
 }
+
