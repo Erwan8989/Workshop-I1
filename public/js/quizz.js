@@ -230,29 +230,32 @@ setInterval(function () {
 }, 10);
 
 
-
+/*********** RESULTS PAGE *****************/
 
 function isPlayer1winner() {
-    let text = null;
 
     if (timer1.getCountdownDuration() < timer2.getCountdownDuration()) {
         return false;
     } else if (timer1.getCountdownDuration() === timer2.getCountdownDuration) {
         timer1.setCountdownDuration(timer2.getCountdownDuration() + 1);
-        text = namePlayer1;
+        return true;
     } else {
-        text = namePlayer2
+        return true
     }
-
-    win.innerHTML = text + " a gagné 🎉";
-
-    return true;
 }
+
+
 
 const joueur1 = document.getElementById("player-results1");
 const joueur2 = document.getElementById("player-results2");
 
 const win = document.getElementsByClassName("win")[0];
+
+if(isPlayer1winner() == true) {
+    win.innerHTML = "LE JOUEUR 1 WIN";
+} else {
+    win.innerHTML = "LE JOUEUR 2 WIN";
+}
 
 let namePlayer1 = localStorage.getItem("player1") ? localStorage.getItem("player1") : "Joueur 1";
 let namePlayer2 = localStorage.getItem("player2") ? localStorage.getItem("player2") : "Joueur 2";
