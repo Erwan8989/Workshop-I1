@@ -74,6 +74,7 @@
 <script>
     let i = 0;
     let questions = main();
+    let playerName = null;
 
     function main() {
         getQuestion();
@@ -81,7 +82,6 @@
         var localStorageQuestions = localStorage.getItem("questions");
         return JSON.parse(localStorageQuestions);
     }
-
 
     document.getElementById("test3").addEventListener("click", function () {
         getOneQuestion(questions, i);
@@ -93,9 +93,9 @@
         let bonneReponse = null;
         let reponses = [];
 
-        questionText.innerHTML = questions[ii]['description'];
+        console.log(questions[ii])
 
-        console.log("test " + JSON.stringify(questions[ii]))
+        questionText.innerHTML = questions[ii]['description'];
 
         bonneReponse = questions[ii]['bonne_reponse'];
         reponses.push(bonneReponse);
@@ -112,6 +112,11 @@
             reponses.push(questions[ii]['reponse_4']);
         }
 
+        for (let i = reponses.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [reponses[i], reponses[j]] = [reponses[j], reponses[i]];
+        }
+
         let container = document.getElementsByClassName("response-block")[0];
         container.innerHTML = ""; // Efface le contenu précédent
 
@@ -124,12 +129,48 @@
             newButton.className = "btn response" + i;
             newButton.textContent = reponses[i];
 
+            newButton.addEventListener("click", function() {
+                questions[ii]['reponse_donnees'] = reponses[i];
+
+                let allButtons = document.querySelectorAll('.response-block button');
+                allButtons.forEach(button => button.disabled = true);
+
+                if (reponses[i] === bonneReponse) {
+                    newButton.style.backgroundColor = "green";
+                    newButton.classList.add("ok");
+                } else {
+                    newButton.style.backgroundColor = "red";
+                    newButton.classList.add("nok");
+
+                    let correctButton = Array.from(allButtons).find(button => button.textContent === bonneReponse);
+                    correctButton.style.backgroundColor = "green";
+                    correctButton.classList.add("ok");
+                }
+
+                setTimeout(function() {
+                    if (playerName === "player1") {
+                        player2Round()
+                    } else {
+                        player1Round();
+                    }
+
+                    getOneQuestion(questions, i);
+                }, 2500);
+            });
+
             newDiv.appendChild(newButton);
             container.appendChild(newDiv);
         }
 
         i++;
+
+        if (i === 2) {
+            localStorage.setItem("questions", JSON.stringify(questions));
+            window.location.href = "results.html";
+        }
+
     }
+
 
 
     var btn_start = document.getElementById("btn-start");
@@ -177,6 +218,7 @@
         player2.style.opacity = "1";
         cardQuizzQuestion.style.display = "block";
         cardQuizzQuestion.style.borderColor = "#ef2929";
+        playerName = "player2";
     }
 
     function player1Round() {
@@ -185,6 +227,7 @@
         player2.style.opacity = "0.25";
         cardQuizzQuestion.style.display = "block";
         cardQuizzQuestion.style.borderColor = "#16c9c9";
+        playerName = "player1";
     }
 </script>
 <script src="./../js/timer.js"></script>

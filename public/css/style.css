@@ -23,7 +23,7 @@ nav {
 }
 
 button {
-    background-color: #6c6059 !important;
+    background-color: #6c6059;
     color: white !important;
 }
 
@@ -47,6 +47,7 @@ button {
     margin-top: 50px;
     display: none;
     min-height: 200px;
+    border-width: 2px;
 }
 
 .block-question {
@@ -81,5 +82,13 @@ button {
 .start-btn {
     margin: 30px auto;
     width: fit-content;
+    background-color: green !important;
+}
+
+.btn.nok {
+    background-color: red !important;
+}
+
+.btn.ok {
     background-color: green !important;
 }
