@@ -11,6 +11,10 @@ class Timer {
         return this.countdownDuration;
     }
 
+    setCountdownDuration(duration) {
+        this.countdownDuration = duration;
+    }
+
     start() {
         if (!this.isRunning) {
             this.isRunning = true;
