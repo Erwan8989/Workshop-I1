@@ -163,3 +163,11 @@ button {
 .green {
     color: green;
 }
+
+.first-border {
+    display: flex;
+    flex-direction: row;
+}
+.first-border div {
+    background-color: #6c6059;
+}

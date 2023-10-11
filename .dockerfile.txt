@@ -1,0 +1,21 @@
+FROM ubuntu:latest
+
+ENV DEBIAN_FRONTEND="noninteractive"
+
+RUN apt-get update && apt-get upgrade -y && \
+    useradd -m ixiondata_974 && \
+    echo 'ixiondata_974:lordTango974' | chpasswd && \
+    apt-get -y install tzdata && \
+    apt-get install -y ssh
+RUN apt-get install -y apache2 php libapache2-mod-php 
+
+# Créez un répertoire pour votre application web
+RUN mkdir -p /var/www/html
+
+COPY . /var/www/html
+
+WORKDIR /var/www/html
+
+EXPOSE 80
+
+CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
