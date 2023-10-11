@@ -17,8 +17,6 @@
         Bootstrap
     </a>
 </nav>
-<!-- <button id="test">test</button> -->
-
 <div class="container-fluid">
     <div class="row">
         <div class="col">
@@ -47,7 +45,7 @@
                         <div class="row">
                             <div class="col">
                                 <div class="card mx-auto card-quizz-question w-75">
-                                    <div class="card-body" id="question-text"></div>
+                                    <div class="card-body block-question" id="question-text"></div>
                                 </div>
                             </div>
                         </div>
@@ -58,10 +56,6 @@
         </div>
     </div>
 </div>
-
-<button id="test2">Joueur 1</button>
-<button id="test1">Joueur 2</button>
-<button id="test3">Get one question</button>
 
 <script src="./../js/script.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
@@ -74,6 +68,7 @@
 <script>
     let i = 0;
     let questions = main();
+    let playerName = null;
 
     function main() {
         getQuestion();
@@ -82,20 +77,15 @@
         return JSON.parse(localStorageQuestions);
     }
 
-
-    document.getElementById("test3").addEventListener("click", function () {
-        getOneQuestion(questions, i);
-    });
-
     let questionText = document.getElementById("question-text");
 
     function getOneQuestion(questions, ii) {
         let bonneReponse = null;
         let reponses = [];
 
-        questionText.innerHTML = questions[ii]['description'];
+        console.log(questions[ii])
 
-        console.log("test " + JSON.stringify(questions[ii]))
+        questionText.innerHTML = questions[ii]['description'];
 
         bonneReponse = questions[ii]['bonne_reponse'];
         reponses.push(bonneReponse);
@@ -112,6 +102,11 @@
             reponses.push(questions[ii]['reponse_4']);
         }
 
+        for (let i = reponses.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [reponses[i], reponses[j]] = [reponses[j], reponses[i]];
+        }
+
         let container = document.getElementsByClassName("response-block")[0];
         container.innerHTML = ""; // Efface le contenu précédent
 
@@ -124,12 +119,48 @@
             newButton.className = "btn response" + i;
             newButton.textContent = reponses[i];
 
+            newButton.addEventListener("click", function() {
+                questions[ii]['reponse_donnees'] = reponses[i];
+
+                let allButtons = document.querySelectorAll('.response-block button');
+                allButtons.forEach(button => button.disabled = true);
+
+                if (reponses[i] === bonneReponse) {
+                    newButton.style.backgroundColor = "green";
+                    newButton.classList.add("ok");
+                } else {
+                    newButton.style.backgroundColor = "red";
+                    newButton.classList.add("nok");
+
+                    let correctButton = Array.from(allButtons).find(button => button.textContent === bonneReponse);
+                    correctButton.style.backgroundColor = "green";
+                    correctButton.classList.add("ok");
+                }
+
+                setTimeout(function() {
+                    if (playerName === "player1") {
+                        player2Round()
+                    } else {
+                        player1Round();
+                    }
+
+                    getOneQuestion(questions, i);
+                }, 2500);
+            });
+
             newDiv.appendChild(newButton);
             container.appendChild(newDiv);
         }
 
         i++;
+
+        if (i === 2) {
+            localStorage.setItem("questions", JSON.stringify(questions));
+            window.location.href = "results.html";
+        }
+
     }
+
 
 
     var btn_start = document.getElementById("btn-start");
@@ -159,12 +190,11 @@
                 clearInterval(interval);
                 counterElement.style.display = "none";
                 player1Round();
+                getOneQuestion(questions, i);
             }
         }, 1000);
     }
 
-    document.getElementById("test1").addEventListener("click", player2Round);
-    document.getElementById("test2").addEventListener("click", player1Round);
     var player1 = document.getElementsByClassName("col1")[0];
     var player2 = document.getElementsByClassName("col2")[0];
     var cardQuizzQuestion = document.getElementsByClassName("card-quizz-question")[0];
@@ -176,6 +206,7 @@
         player2.style.opacity = "1";
         cardQuizzQuestion.style.display = "block";
         cardQuizzQuestion.style.borderColor = "#ef2929";
+        playerName = "player2";
     }
 
     function player1Round() {
@@ -184,6 +215,7 @@
         player2.style.opacity = "0.25";
         cardQuizzQuestion.style.display = "block";
         cardQuizzQuestion.style.borderColor = "#16c9c9";
+        playerName = "player1";
     }
 </script>
 <script src="./../js/timer.js"></script>
