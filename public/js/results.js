@@ -10,13 +10,7 @@ function isPlayer1winner(){
     }
 }
 
-
 const questions = localStorage.getItem('questions');
-
-
-
-
-
 
 const joueur1 = document.getElementById("player-results1");
 const joueur2 = document.getElementById("player-results2");
