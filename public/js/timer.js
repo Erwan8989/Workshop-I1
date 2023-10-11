@@ -71,12 +71,19 @@ class Timer {
         var hundredSecs = this.countdownDuration % 100;
         var mins = Math.floor(secs / 60);
         secs %= 60;
-        var timer =
-            ((mins < 10) ? "0" : "") + mins + ":" +
+        document.getElementById(this.element).innerHTML = ((mins < 10) ? "0" : "") + mins + ":" +
             ((secs < 10) ? "0" : "") + secs + ":" +
             ((hundredSecs < 10) ? "0" : "") + hundredSecs;
+    }
 
-        document.getElementById(this.element).innerHTML = timer;
+    formatTime(milliseconds) {
+        var secs = Math.floor(milliseconds / 100);
+        var hundredSecs = milliseconds % 100;
+        var mins = Math.floor(secs / 60);
+        secs %= 60;
+        return ((mins < 10) ? "0" : "") + mins + ":" +
+            ((secs < 10) ? "0" : "") + secs + ":" +
+            ((hundredSecs < 10) ? "0" : "") + hundredSecs;
     }
 }
 

@@ -8,7 +8,7 @@ function main() {
 
 // Fonction pour afficher une seule question
 function getOneQuestion(questions, ii) {
-    if (i === 12) {
+    if (i === 3) {
         finish();
     }
 
@@ -120,6 +120,9 @@ function getOneQuestion(questions, ii) {
 }
 
 function finish() {
+    localStorage.setItem("finalTime1", timer1.getCountdownDuration());
+    localStorage.setItem("finalTime2", timer2.getCountdownDuration());
+
     localStorage.setItem("questions", JSON.stringify(questions));
     window.location.href = "results.html";
 }
@@ -231,35 +234,3 @@ setInterval(function () {
 
 
 /*********** RESULTS PAGE *****************/
-
-function isPlayer1winner() {
-
-    if (timer1.getCountdownDuration() < timer2.getCountdownDuration()) {
-        return false;
-    } else if (timer1.getCountdownDuration() === timer2.getCountdownDuration) {
-        timer1.setCountdownDuration(timer2.getCountdownDuration() + 1);
-        return true;
-    } else {
-        return true
-    }
-}
-
-
-
-const joueur1 = document.getElementById("player-results1");
-const joueur2 = document.getElementById("player-results2");
-
-const win = document.getElementsByClassName("win")[0];
-
-if(isPlayer1winner() == true) {
-    win.innerHTML = "LE JOUEUR 1 WIN";
-} else {
-    win.innerHTML = "LE JOUEUR 2 WIN";
-}
-
-let namePlayer1 = localStorage.getItem("player1") ? localStorage.getItem("player1") : "Joueur 1";
-let namePlayer2 = localStorage.getItem("player2") ? localStorage.getItem("player2") : "Joueur 2";
-
-isPlayer1winner();
-joueur1.innerHTML = namePlayer1;
-joueur2.innerHTML = namePlayer2;
