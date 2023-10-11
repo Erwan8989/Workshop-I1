@@ -3,7 +3,7 @@ function displayQuestion(){
 }
 
 async function getQuestion() {
-    const url = "http://localhost/Workshop-I1/private/get_question.php";
+    const url = "http://workshop.com/private/get_question.php";
 
     const http = new XMLHttpRequest();
     http.open("GET", url, true);

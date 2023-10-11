@@ -124,21 +124,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
 -->
 
-<script>
-
-  var joueur1 = document.getElementById("player-results1");
-  var joueur2 = document.getElementById("player-results2");
-
-  const player1 = localStorage.getItem("player1") ? localStorage.getItem("player1") : "Joueur 1";
-  const player2 = localStorage.getItem("player2") ? localStorage.getItem("player2") : "Joueur 2";
-
-  let t = localStorage.getItem("questions");
-  console.log(JSON.parse(t));
-
-  joueur1.innerHTML = player1;
-  joueur2.innerHTML = player2;
-
-</script>
+<script src="./../js/results.js"></script>
 
 </body>
 </html>
