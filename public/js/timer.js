@@ -7,6 +7,10 @@ class Timer {
         this.ticker;
     }
 
+    getCountdownDuration(){
+        return this.countdownDuration;
+    }
+
     start(){
         if(!this.isRunning){
             this.isRunning = true;
@@ -70,6 +74,9 @@ class Timer {
                     
         document.getElementById(this.element).innerHTML = timer;
     }
+
+
+    
 }
 
 
