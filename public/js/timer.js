@@ -53,13 +53,14 @@ class Timer {
     }
 
     removeTime(toremove){
-            if(this.countdownDuration > 0){
-                this.countdownDuration = this.countdownDuration - parseInt(toremove);
-                if(this.countdownDuration <= 0){
-                    this.stop;
-                }
-                this.updateTimer();
+        if(this.countdownDuration > 0){
+            this.countdownDuration = this.countdownDuration - parseInt(toremove);
+            if(this.countdownDuration <= 0){
+                this.countdownDuration = 0;
+                this.stop;
             }
+            this.updateTimer();
+        }
     }
 
     updateTimer(){
