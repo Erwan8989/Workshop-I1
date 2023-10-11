@@ -25,7 +25,6 @@ let namePlayer1 = localStorage.getItem("player1") ? localStorage.getItem("player
 let namePlayer2 = localStorage.getItem("player2") ? localStorage.getItem("player2") : "Joueur 2";
 
 let t = localStorage.getItem("questions");
-console.log(JSON.parse(t));
 
 joueur1.innerHTML = namePlayer1;
 joueur2.innerHTML = namePlayer2;
