@@ -17,8 +17,6 @@
         Bootstrap
     </a>
 </nav>
-<!-- <button id="test">test</button> -->
-
 <div class="container-fluid">
     <div class="row">
         <div class="col">
@@ -59,10 +57,6 @@
     </div>
 </div>
 
-<button id="test2">Joueur 1</button>
-<button id="test1">Joueur 2</button>
-<button id="test3">Get one question</button>
-
 <script src="./../js/script.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
@@ -82,10 +76,6 @@
         var localStorageQuestions = localStorage.getItem("questions");
         return JSON.parse(localStorageQuestions);
     }
-
-    document.getElementById("test3").addEventListener("click", function () {
-        getOneQuestion(questions, i);
-    });
 
     let questionText = document.getElementById("question-text");
 
@@ -205,8 +195,6 @@
         }, 1000);
     }
 
-    document.getElementById("test1").addEventListener("click", player2Round);
-    document.getElementById("test2").addEventListener("click", player1Round);
     var player1 = document.getElementsByClassName("col1")[0];
     var player2 = document.getElementsByClassName("col2")[0];
     var cardQuizzQuestion = document.getElementsByClassName("card-quizz-question")[0];
