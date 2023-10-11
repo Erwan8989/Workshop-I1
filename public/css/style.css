@@ -147,3 +147,11 @@ button {
 .btn.ok {
     background-color: green !important;
 }
+
+.red {
+    color: red;
+}
+
+.green {
+    color: green;
+}
