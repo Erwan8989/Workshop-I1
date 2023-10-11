@@ -229,3 +229,34 @@ setInterval(function () {
     }
 }, 10);
 
+
+
+
+function isPlayer1winner() {
+    let text = null;
+
+    if (timer1.getCountdownDuration() < timer2.getCountdownDuration()) {
+        return false;
+    } else if (timer1.getCountdownDuration() === timer2.getCountdownDuration) {
+        timer1.setCountdownDuration(timer2.getCountdownDuration() + 1);
+        text = namePlayer1;
+    } else {
+        text = namePlayer2
+    }
+
+    win.innerHTML = text + " a gagné 🎉";
+
+    return true;
+}
+
+const joueur1 = document.getElementById("player-results1");
+const joueur2 = document.getElementById("player-results2");
+
+const win = document.getElementsByClassName("win")[0];
+
+let namePlayer1 = localStorage.getItem("player1") ? localStorage.getItem("player1") : "Joueur 1";
+let namePlayer2 = localStorage.getItem("player2") ? localStorage.getItem("player2") : "Joueur 2";
+
+isPlayer1winner();
+joueur1.innerHTML = namePlayer1;
+joueur2.innerHTML = namePlayer2;
