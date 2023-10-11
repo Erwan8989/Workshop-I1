@@ -48,7 +48,7 @@ button {
     display: none;
 }
 
-.response1, .response2 {
+.response0, .response1, .response2, .response3 {
     font-size: 30px;
     background-color: #16c9c9 !important;
 }
