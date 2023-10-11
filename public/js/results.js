@@ -1,6 +1,6 @@
 function isPlayer1winner(){
     if(timer1.getCountdownDuration() < timer2.getCountdownDuration()){
-        return false
+        return false;
     } else if (timer1.getCountdownDuration() == timer2.getCountdownDuration){
         timer1.setCountdownDuration(timer2.getCountdownDuration() + 1);
         return true;
@@ -10,7 +10,8 @@ function isPlayer1winner(){
     }
 }
 
-const questions = localStorage.getItem('questions');
+const questions = JSON.parse(localStorage.getItem('questions'));
+
 
 const joueur1 = document.getElementById("player-results1");
 const joueur2 = document.getElementById("player-results2");
