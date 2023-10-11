@@ -22,3 +22,11 @@ button {
     background-color: #6c6059 !important;
     color: white !important;
 }
+
+.first-border {
+    display: flex;
+    flex-direction: row;
+}
+.first-border div {
+    background-color: #6c6059;
+}
