@@ -47,26 +47,11 @@
                         <div class="row">
                             <div class="col">
                                 <div class="card mx-auto card-quizz-question w-75">
-                                    <div class="card-body">
-                                        **Le fils d’une employée est malade et l’école lui demande de venir le chercher
-                                        ; il est 15h. Son collègue, d’un ton agacé, lui dit :**
-
-                                        **« Vous les femmes vous avez un prétexte tout trouvé pour quitter le travail en
-                                        pleine après-midi, ça sert d’avoir des gosses ! »**
-
-                                        **Il s’agit d’un agissement sexiste :**
-                                    </div>
+                                    <div class="card-body block-question" id="question-text"></div>
                                 </div>
                             </div>
                         </div>
-                        <div class="row response-block">
-                            <div class="col">
-                                <button type="button" class="btn response1">Vrai</button>
-                            </div>
-                            <div class="col">
-                                <button type="button" class="btn response2">Faux</button>
-                            </div>
-                        </div>
+                        <div class="row response-block"></div>
                     </div>
                 </div>
             </div>
@@ -76,6 +61,7 @@
 
 <button id="test2">Joueur 1</button>
 <button id="test1">Joueur 2</button>
+<button id="test3">Get one question</button>
 
 <script src="./../js/script.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
@@ -88,6 +74,7 @@
 <script>
     let i = 0;
     let questions = main();
+
     function main() {
         getQuestion();
 
@@ -95,13 +82,55 @@
         return JSON.parse(localStorageQuestions);
     }
 
-    getOneQuestion(questions, i);
 
-    function getOneQuestion(questions, in) {
-        console.log("test " + JSON.stringify(questions[in]['id']));
+    document.getElementById("test3").addEventListener("click", function () {
+        getOneQuestion(questions, i);
+    });
 
-        in++;
+    let questionText = document.getElementById("question-text");
+
+    function getOneQuestion(questions, ii) {
+        let bonneReponse = null;
+        let reponses = [];
+
+        questionText.innerHTML = questions[ii]['description'];
+
+        console.log("test " + JSON.stringify(questions[ii]))
+
+        bonneReponse = questions[ii]['bonne_reponse'];
+        reponses.push(bonneReponse);
+
+        if (questions[ii]['reponse_2'] != null) {
+            reponses.push(questions[ii]['reponse_2']);
+        }
+
+        if (questions[ii]['reponse_3'] != null) {
+            reponses.push(questions[ii]['reponse_3']);
+        }
+
+        if (questions[ii]['reponse_4'] != null) {
+            reponses.push(questions[ii]['reponse_4']);
+        }
+
+        let container = document.getElementsByClassName("response-block")[0];
+        container.innerHTML = ""; // Efface le contenu précédent
+
+        for (let i = 0; i < reponses.length; i++) {
+            let newDiv = document.createElement("div");
+            newDiv.className = "col";
+
+            let newButton = document.createElement("button");
+            newButton.type = "button";
+            newButton.className = "btn response" + i;
+            newButton.textContent = reponses[i];
+
+            newDiv.appendChild(newButton);
+            container.appendChild(newDiv);
+        }
+
+        i++;
     }
+
 
     var btn_start = document.getElementById("btn-start");
     btn_start.addEventListener("click", start);
@@ -130,6 +159,7 @@
                 clearInterval(interval);
                 counterElement.style.display = "none";
                 player1Round();
+                getOneQuestion(questions, i);
             }
         }, 1000);
     }
@@ -157,6 +187,7 @@
         cardQuizzQuestion.style.borderColor = "#16c9c9";
     }
 </script>
+<script src="./../js/timer.js"></script>
 
 <!-- Option 2: Separate Popper and Bootstrap JS -->
 <!--
