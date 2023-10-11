@@ -82,8 +82,14 @@
     let joueur1Remove = document.getElementById("joueur1-remove");
     let joueur2Remove = document.getElementById("joueur2-remove");
 
-    let timer1 = new Timer(12000, "chrono-player1");
-    let timer2 = new Timer(12000, "chrono-player2");
+    let timer1 = new Timer(6000, "chrono-player1");
+    let timer2 = new Timer(6000, "chrono-player2");
+
+    const playerName1 = localStorage.getItem("player1") ? localStorage.getItem("player1") : "Joueur 1";
+    const playerName2 = localStorage.getItem("player2") ? localStorage.getItem("player2") : "Joueur 2";
+    document.getElementById("player-results-quizz1").innerHTML = playerName1;
+    document.getElementById("player-results-quizz2").innerHTML = playerName2;
+
 
     // Fonction principale pour initialiser les questions
     function main() {
@@ -205,9 +211,13 @@
         i++;
 
         if (i === 13) {
-            localStorage.setItem("questions", JSON.stringify(questions));
-            window.location.href = "results.html";
+            finish();
         }
+    }
+
+    function finish() {
+        localStorage.setItem("questions", JSON.stringify(questions));
+        window.location.href = "results.html";
     }
 
     var btn_start = document.getElementById("btn-start");
@@ -269,6 +279,22 @@
         playerName = "player2";
         timer2.start();
     }
+
+    setInterval(function () {
+        if (timer1.getCountdownDuration() === 0) {
+            chronoPlayer1.style.color = "red";
+            setInterval(function () {
+                finish();
+            }, 2000)
+        }
+
+        if (timer2.getCountdownDuration() === 0) {
+            chronoPlayer2.style.color = "red";
+            setInterval(function () {
+                finish();
+            }, 2000)
+        }
+    }, 10);
 </script>
 
 <!-- Option 2: Separate Popper and Bootstrap JS -->
