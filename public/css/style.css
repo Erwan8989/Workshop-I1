@@ -54,7 +54,7 @@ button {
 .card-quizz-question {
     margin-top: 50px;
     display: none;
-    min-height: 200px;
+    min-height: 220px;
     border-width: 2px;
 }
 
