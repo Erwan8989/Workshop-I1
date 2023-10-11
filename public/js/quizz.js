@@ -15,8 +15,6 @@ function getOneQuestion(questions, ii) {
     let bonneReponse = null;
     let reponses = [];
 
-    console.log(questions)
-
     questionText.innerHTML = questions[ii]['description'];
 
     bonneReponse = questions[ii]['bonne_reponse'];

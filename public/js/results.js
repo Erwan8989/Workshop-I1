@@ -1,8 +1,4 @@
 function isPlayer1winner() {
-
-    console.log("timer1.getCountdownDuration() " + finalTime1)
-    console.log("timer2.getCountdownDuration() " + finalTime2)
-
     if (finalTime1 < finalTime2) {
         return false;
     } else if (finalTime1 === finalTime2) {
