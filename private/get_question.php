@@ -16,6 +16,6 @@ $ret = json_encode($ret);
 $ret = base64_encode($ret);
 
 header("Content-Type: text/html;charset=utf-8");
-header('Content-Length: '.strlen($ret) ); 
+header('Content-Length: ' . strlen($ret));
 
 echo $ret;

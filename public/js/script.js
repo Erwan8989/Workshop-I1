@@ -1,4 +1,4 @@
-function displayQuestion(){
+function displayQuestion() {
 
 }
 

@@ -11,7 +11,7 @@ function getOneQuestion(questions, ii) {
     if (i === 12) {
         finish();
     }
-    
+
     let bonneReponse = null;
     let reponses = [];
 
@@ -176,8 +176,6 @@ function player2Round() {
     playerName = "player2";
     timer2.start();
 }
-
-
 
 
 /********* QUIZZZ PAGE   **********/

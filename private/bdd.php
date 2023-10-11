@@ -25,7 +25,7 @@ class bdd
     public function getQuestions()
     {
         $reponse = $this->connexion->query("SELECT * FROM questions ORDER BY RAND() LIMIT 12;");
-        
+
         if ($reponse->num_rows > 0) {
             $result = array();
             while ($row = $reponse->fetch_assoc()) {

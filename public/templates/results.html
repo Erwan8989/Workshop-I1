@@ -1,121 +1,160 @@
 <!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
-  <link rel="stylesheet" href="../css/style.css">
-  <title>Résultats</title>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+          integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
+    <title>Résultats</title>
 </head>
 <body>
 <nav class="navbar navbar-light">
-  <a class="navbar-brand" href="../../index.php">
-    <img src="/docs/4.6/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
-    Bootstrap
-  </a>
+    <a class="navbar-brand" href="../../index.php">
+        <img alt="" class="d-inline-block align-top" height="30" src="/docs/4.6/assets/brand/bootstrap-solid.svg"
+             width="30">
+        Bootstrap
+    </a>
 </nav>
 
 <div class="container-fluid">
-  <div class="row mt-5">
-    <div class="col col1">
-      <div class="playerName mx-auto">
-        <p id="player-results1">Joueur 1</p>
-      </div>
+    <div class="row mt-5">
+        <div class="col col1">
+            <div class="playerName mx-auto">
+                <p id="player-results1">Joueur 1</p>
+            </div>
+        </div>
+        <div class="col">
+            <div class="playerName mx-auto">
+                <p id="player-results2">Joueur 2</p>
+            </div>
+        </div>
     </div>
-    <div class="col">
-      <div class="playerName mx-auto">
-        <p id="player-results2">Joueur 2</p>
-      </div>
-    </div>
-  </div>
 </div>
 
 <div id="game-recap">
-  <div class="winner" id="winner">
-    <h1>Le joueur 1 gagne!!</h1>
-  </div>
-  <div class="question-section left">
-    <div class="question-container">
-      <div class="question-number">Question 1</div>
-      <div class="question-text">Une jeune femme arrive dans une réunion pour la première fois depuis sa prise de poste. Son maître d’apprentissage l’accueille et lui dit :
-        « Bonjour, bienvenue, je suis ravi, tu seras la seule femme présente pour notre réunion de service, aussi, tu feras le compte-rendu ».</div>
-      <div class="question-response">
-        <button type="button" class="btn btn-success" id="response-1">agissement sexiste</button>
-        <button type="button" class="btn btn-info" id="response-2">agression sexuelle</button>
-      </div>
-      <div class="question-explanation">
-        💡 *Il s’agit d’un **agissement sexiste,** défini comme tout agissement lié au sexe d’une personne, ayant pour objet ou pour effet de porter atteinte à sa dignité ou de créer un environnement intimidant, hostile, dégradant humiliant ou offensant.*
-        *Sous prétexte qu’elle soit la seule femme de la réunion, son maître d’apprentissage lui demande de faire le compte-rendu. La demande ne tient pas compte de ses compétences mais de son sexe. Ce type de comportement n’a pas lieu d’être dans le monde du travail.*
-        *De tels agissements peuvent affecter le collectif de travail (ambiance, clivages, absences, anxiété généralisée) et entraîner pour la victime des impacts psychologiques et sur le travail.*
-      </div>
+    <div class="winner" id="winner">
+        <h1>Le joueur 1 gagne!!</h1>
     </div>
-  </div>
-  <div class="question-section">
-    <div class="question-container">
-      <div class="question-number-2">Question 2</div>
-      <div class="question-text">Une jeune femme arrive dans une réunion pour la première fois depuis sa prise de poste. Son maître d’apprentissage l’accueille et lui dit :
-        « Bonjour, bienvenue, je suis ravi, tu seras la seule femme présente pour notre réunion de service, aussi, tu feras le compte-rendu ».</div>
-      <div class="question-response">
-        <button type="button" class="btn btn-success"id="response-1">agissement sexiste</button>
-        <button type="button" class="btn btn-danger"id="response-2">agression sexuelle</button>
-      </div>
-      <div class="question-explanation">
-        💡 *Il s’agit d’un **agissement sexiste,** défini comme tout agissement lié au sexe d’une personne, ayant pour objet ou pour effet de porter atteinte à sa dignité ou de créer un environnement intimidant, hostile, dégradant humiliant ou offensant.*
-        *Sous prétexte qu’elle soit la seule femme de la réunion, son maître d’apprentissage lui demande de faire le compte-rendu. La demande ne tient pas compte de ses compétences mais de son sexe. Ce type de comportement n’a pas lieu d’être dans le monde du travail.*
-        *De tels agissements peuvent affecter le collectif de travail (ambiance, clivages, absences, anxiété généralisée) et entraîner pour la victime des impacts psychologiques et sur le travail.*
-      </div>
+    <div class="question-section left">
+        <div class="question-container">
+            <div class="question-number">Question 1</div>
+            <div class="question-text">Une jeune femme arrive dans une réunion pour la première fois depuis sa prise de
+                poste. Son maître d’apprentissage l’accueille et lui dit :
+                « Bonjour, bienvenue, je suis ravi, tu seras la seule femme présente pour notre réunion de service,
+                aussi, tu feras le compte-rendu ».
+            </div>
+            <div class="question-response">
+                <button class="btn btn-success" id="response-1" type="button">agissement sexiste</button>
+                <button class="btn btn-info" id="response-2" type="button">agression sexuelle</button>
+            </div>
+            <div class="question-explanation">
+                💡 *Il s’agit d’un **agissement sexiste,** défini comme tout agissement lié au sexe d’une personne, ayant
+                pour objet ou pour effet de porter atteinte à sa dignité ou de créer un environnement intimidant,
+                hostile, dégradant humiliant ou offensant.*
+                *Sous prétexte qu’elle soit la seule femme de la réunion, son maître d’apprentissage lui demande de
+                faire le compte-rendu. La demande ne tient pas compte de ses compétences mais de son sexe. Ce type de
+                comportement n’a pas lieu d’être dans le monde du travail.*
+                *De tels agissements peuvent affecter le collectif de travail (ambiance, clivages, absences, anxiété
+                généralisée) et entraîner pour la victime des impacts psychologiques et sur le travail.*
+            </div>
+        </div>
     </div>
-  </div>
-  <div class="question-section left">
-    <div class="question-container">
-      <div class="question-number">Question 1</div>
-      <div class="question-text">Une jeune femme arrive dans une réunion pour la première fois depuis sa prise de poste. Son maître d’apprentissage l’accueille et lui dit :
-        « Bonjour, bienvenue, je suis ravi, tu seras la seule femme présente pour notre réunion de service, aussi, tu feras le compte-rendu ».</div>
-      <div class="question-response">
-        <button type="button" class="btn btn-success" id="response-1">agissement sexiste</button>
-        <button type="button" class="btn btn-info" id="response-2">agression sexuelle</button>
-      </div>
-      <div class="question-explanation">
-        💡 *Il s’agit d’un **agissement sexiste,** défini comme tout agissement lié au sexe d’une personne, ayant pour objet ou pour effet de porter atteinte à sa dignité ou de créer un environnement intimidant, hostile, dégradant humiliant ou offensant.*
-        *Sous prétexte qu’elle soit la seule femme de la réunion, son maître d’apprentissage lui demande de faire le compte-rendu. La demande ne tient pas compte de ses compétences mais de son sexe. Ce type de comportement n’a pas lieu d’être dans le monde du travail.*
-        *De tels agissements peuvent affecter le collectif de travail (ambiance, clivages, absences, anxiété généralisée) et entraîner pour la victime des impacts psychologiques et sur le travail.*
-      </div>
+    <div class="question-section">
+        <div class="question-container">
+            <div class="question-number-2">Question 2</div>
+            <div class="question-text">Une jeune femme arrive dans une réunion pour la première fois depuis sa prise de
+                poste. Son maître d’apprentissage l’accueille et lui dit :
+                « Bonjour, bienvenue, je suis ravi, tu seras la seule femme présente pour notre réunion de service,
+                aussi, tu feras le compte-rendu ».
+            </div>
+            <div class="question-response">
+                <button class="btn btn-success" id="response-1" type="button">agissement sexiste</button>
+                <button class="btn btn-danger" id="response-2" type="button">agression sexuelle</button>
+            </div>
+            <div class="question-explanation">
+                💡 *Il s’agit d’un **agissement sexiste,** défini comme tout agissement lié au sexe d’une personne, ayant
+                pour objet ou pour effet de porter atteinte à sa dignité ou de créer un environnement intimidant,
+                hostile, dégradant humiliant ou offensant.*
+                *Sous prétexte qu’elle soit la seule femme de la réunion, son maître d’apprentissage lui demande de
+                faire le compte-rendu. La demande ne tient pas compte de ses compétences mais de son sexe. Ce type de
+                comportement n’a pas lieu d’être dans le monde du travail.*
+                *De tels agissements peuvent affecter le collectif de travail (ambiance, clivages, absences, anxiété
+                généralisée) et entraîner pour la victime des impacts psychologiques et sur le travail.*
+            </div>
+        </div>
     </div>
-  </div>
-  <div class="question-section">
-    <div class="question-container">
-      <div class="question-number-2">Question 2</div>
-      <div class="question-text">Une jeune femme arrive dans une réunion pour la première fois depuis sa prise de poste. Son maître d’apprentissage l’accueille et lui dit :
-        « Bonjour, bienvenue, je suis ravi, tu seras la seule femme présente pour notre réunion de service, aussi, tu feras le compte-rendu ».</div>
-      <div class="question-response">
-        <button type="button" class="btn btn-success"id="response-1">agissement sexiste</button>
-        <button type="button" class="btn btn-danger"id="response-2">agression sexuelle</button>
-      </div>
-      <div class="question-explanation">
-        💡 *Il s’agit d’un **agissement sexiste,** défini comme tout agissement lié au sexe d’une personne, ayant pour objet ou pour effet de porter atteinte à sa dignité ou de créer un environnement intimidant, hostile, dégradant humiliant ou offensant.*
-        *Sous prétexte qu’elle soit la seule femme de la réunion, son maître d’apprentissage lui demande de faire le compte-rendu. La demande ne tient pas compte de ses compétences mais de son sexe. Ce type de comportement n’a pas lieu d’être dans le monde du travail.*
-        *De tels agissements peuvent affecter le collectif de travail (ambiance, clivages, absences, anxiété généralisée) et entraîner pour la victime des impacts psychologiques et sur le travail.*
-      </div>
+    <div class="question-section left">
+        <div class="question-container">
+            <div class="question-number">Question 1</div>
+            <div class="question-text">Une jeune femme arrive dans une réunion pour la première fois depuis sa prise de
+                poste. Son maître d’apprentissage l’accueille et lui dit :
+                « Bonjour, bienvenue, je suis ravi, tu seras la seule femme présente pour notre réunion de service,
+                aussi, tu feras le compte-rendu ».
+            </div>
+            <div class="question-response">
+                <button class="btn btn-success" id="response-1" type="button">agissement sexiste</button>
+                <button class="btn btn-info" id="response-2" type="button">agression sexuelle</button>
+            </div>
+            <div class="question-explanation">
+                💡 *Il s’agit d’un **agissement sexiste,** défini comme tout agissement lié au sexe d’une personne, ayant
+                pour objet ou pour effet de porter atteinte à sa dignité ou de créer un environnement intimidant,
+                hostile, dégradant humiliant ou offensant.*
+                *Sous prétexte qu’elle soit la seule femme de la réunion, son maître d’apprentissage lui demande de
+                faire le compte-rendu. La demande ne tient pas compte de ses compétences mais de son sexe. Ce type de
+                comportement n’a pas lieu d’être dans le monde du travail.*
+                *De tels agissements peuvent affecter le collectif de travail (ambiance, clivages, absences, anxiété
+                généralisée) et entraîner pour la victime des impacts psychologiques et sur le travail.*
+            </div>
+        </div>
     </div>
-  </div>
+    <div class="question-section">
+        <div class="question-container">
+            <div class="question-number-2">Question 2</div>
+            <div class="question-text">Une jeune femme arrive dans une réunion pour la première fois depuis sa prise de
+                poste. Son maître d’apprentissage l’accueille et lui dit :
+                « Bonjour, bienvenue, je suis ravi, tu seras la seule femme présente pour notre réunion de service,
+                aussi, tu feras le compte-rendu ».
+            </div>
+            <div class="question-response">
+                <button class="btn btn-success" id="response-1" type="button">agissement sexiste</button>
+                <button class="btn btn-danger" id="response-2" type="button">agression sexuelle</button>
+            </div>
+            <div class="question-explanation">
+                💡 *Il s’agit d’un **agissement sexiste,** défini comme tout agissement lié au sexe d’une personne, ayant
+                pour objet ou pour effet de porter atteinte à sa dignité ou de créer un environnement intimidant,
+                hostile, dégradant humiliant ou offensant.*
+                *Sous prétexte qu’elle soit la seule femme de la réunion, son maître d’apprentissage lui demande de
+                faire le compte-rendu. La demande ne tient pas compte de ses compétences mais de son sexe. Ce type de
+                comportement n’a pas lieu d’être dans le monde du travail.*
+                *De tels agissements peuvent affecter le collectif de travail (ambiance, clivages, absences, anxiété
+                généralisée) et entraîner pour la victime des impacts psychologiques et sur le travail.*
+            </div>
+        </div>
+    </div>
 </div>
 
 <div class="pourcentage">
-  <div class="score player1">
-    <span>Score joueur 1</span><span class="number">83%</span>
-  </div><div class="score player2">
-    <span>Score joueur 2</span><span class="number">66%</span>
-  </div>
+    <div class="score player1">
+        <span>Score joueur 1</span><span class="number">83%</span>
+    </div>
+    <div class="score player2">
+        <span>Score joueur 2</span><span class="number">66%</span>
+    </div>
 </div>
 
 <div class="result-end">
-  <button type="button" class="btn btn-info" id="response-2">Retour a la page d'acceuil</button>
+    <button class="btn btn-info" id="response-2" type="button">Retour a la page d'acceuil</button>
 </div>
 
 <script src="./../js/results.js"></script>
 <script src="./../js/timer.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+<script crossorigin="anonymous"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+<script crossorigin="anonymous"
+        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+        src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 
 <!-- Option 2: Separate Popper and Bootstrap JS -->
 <!--
