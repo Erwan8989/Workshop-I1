@@ -33,12 +33,16 @@
                                 <div class="joueur1">
                                     <p id="player-results-quizz1">Joueur 1</p>
                                     <p id="chrono-player1">00:00:00</p>
+                                    <p id="joueur1-add" style="display: none;">+10s</p>
+                                    <p id="joueur1-remove" style="display: none;">-10s</p>
                                 </div>
                             </div>
                             <div class="col col2">
                                 <div class="joueur2">
                                     <p id="player-results-quizz2">Joueur 2</p>
                                     <p id="chrono-player2">00:00:00</p>
+                                    <p id="joueur2-add" style="display: none;">+10s</p>
+                                    <p id="joueur2-remove" style="display: none;">-10s</p>
                                 </div>
                             </div>
                         </div>
@@ -72,6 +76,11 @@
 
     let chronoPlayer1 = document.getElementById("chrono-player1");
     let chronoPlayer2 = document.getElementById("chrono-player2");
+
+    let joueur1Add = document.getElementById("joueur1-add");
+    let joueur2Add = document.getElementById("joueur2-add");
+    let joueur1Remove = document.getElementById("joueur1-remove");
+    let joueur2Remove = document.getElementById("joueur2-remove");
 
     let timer1 = new Timer(12000, "chrono-player1");
     let timer2 = new Timer(12000, "chrono-player2");
@@ -136,9 +145,11 @@
                 if (reponses[i] === bonneReponse) {
                     if (playerName === "player1") {
                         timer1.addTime(1000);
+                        joueur1Add.style.display = "flex";
                         chronoPlayer1.style.color = "green";
                     } else {
                         timer2.addTime(1000);
+                        joueur2Add.style.display = "flex";
                         chronoPlayer2.style.color = "green";
                     }
 
@@ -147,9 +158,11 @@
                 } else {
                     if (playerName === "player1") {
                         timer1.removeTime(1000);
+                        joueur1Remove.style.display = "flex";
                         chronoPlayer1.style.color = "red";
                     } else {
                         timer2.removeTime(1000);
+                        joueur2Remove.style.display = "flex";
                         chronoPlayer2.style.color = "red";
                     }
 
@@ -175,6 +188,11 @@
                         player1Round();
                         chronoPlayer2.style.color = "black";
                     }
+
+                    joueur1Remove.style.display = "none";
+                    joueur2Remove.style.display = "none";
+                    joueur1Add.style.display = "none";
+                    joueur2Add.style.display = "none";
 
                     getOneQuestion(questions, i);
                 }, 2500);

@@ -32,11 +32,19 @@ button {
     margin-top: 50px
 }
 
-#player-results-quizz1, #player-results-quizz2, #chrono-player1, #chrono-player2 {
+#player-results-quizz1, #player-results-quizz2, #chrono-player1, #chrono-player2, #joueur1-add, #joueur1-remove, #joueur2-add, #joueur2-remove {
     font-size: 25px;
     font-weight: bold;
     width: fit-content;
     margin: 0 auto;
+}
+
+#joueur1-add, #joueur2-add {
+    color: green;
+}
+
+#joueur1-remove, #joueur2-remove {
+    color: red;
 }
 
 #chrono-player1, #chrono-player2 {
