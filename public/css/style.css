@@ -163,3 +163,7 @@ button {
 .green {
     color: green;
 }
+
+.playerName {
+    text-align: center;
+}
