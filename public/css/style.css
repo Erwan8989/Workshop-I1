@@ -23,8 +23,8 @@ nav {
 }
 
 button {
-    background-color: #6c6059 ;
-    color: white ;
+    background-color: #6c6059;
+    color: white;
 }
 
 .card-quizz {
@@ -48,7 +48,7 @@ button {
 }
 
 #chrono-player1, #chrono-player2 {
-    margin-top: 10px ;
+    margin-top: 10px;
 }
 
 .card-quizz-question {
@@ -94,55 +94,48 @@ button {
 }
 
 
-
 /**************** PAGE RULTATS **********************/
 
-
-.winner{
-    font-size: large;
-    text-align: center;
-}
-
-.question-section{
-    background-color: rgba(17,75,95, 0.1);
+.question-section {
+    background-color: rgba(17, 75, 95, 0.1);
     padding: 30px 15px;
     margin: 3px;
 }
 
-.question-section:nth-child(odd){
+.question-section:nth-child(odd) {
     display: flex;
     justify-content: flex-end;
-    background-color: rgba(171,78,104, 0.1);
+    background-color: rgba(171, 78, 104, 0.1);
 }
 
 
-.question-container{
-   max-width: 70%;
+.question-container {
+    max-width: 70%;
 }
 
-.question-number{
+.question-number {
     text-align: center;
     font-weight: bold;
     color: #114B5F;
 }
 
-.question-number-2{
+.question-number-2 {
     margin-top: 10px;
     text-align: center;
     font-weight: bold;
     color: #AB4E68;
 }
 
-.question-text{
+.question-text {
     margin-bottom: 20px;
 }
 
-.pourcentage{
+.pourcentage {
     display: flex;
     justify-content: space-around;
 }
 
-.pourcentage .score{
+.pourcentage .score {
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -150,32 +143,32 @@ button {
     font-size: 150%;
 }
 
-.score .number{
+.score .number {
     font-size: 300%;
 }
 
 
-.question-response{
+.question-response {
     display: flex;
     justify-content: space-around;
     margin-bottom: 20px;
 }
 
-.right{
-   float: right !important;
+.right {
+    float: right !important;
 }
 
-.result-end{
+.result-end {
     height: 100px;
     text-align: center;
     padding: 30px;
 }
 
-.player1{
+.player1 {
     color: #114B5F;
 }
 
-.player2{
+.player2 {
     color: #AB4E68;
 }
 
@@ -209,3 +202,27 @@ button {
     text-align: center;
 }
 
+.first-panel {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 15px;
+    width: 100%;
+}
+
+.parag {
+    width: 20%;
+    background-color: #d9d9d9;
+}
+
+.win {
+    width: fit-content;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    margin: 40px auto;
+    background: linear-gradient(to right, rgba(0, 255, 0, 0.5), rgba(0, 128, 0, 0.5));
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
