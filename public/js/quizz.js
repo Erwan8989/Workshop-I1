@@ -8,7 +8,7 @@ function main() {
 
 // Fonction pour afficher une seule question
 function getOneQuestion(questions, ii) {
-    if (i === 12) {
+    if (i === 3) {
         finish();
     }
 
@@ -198,8 +198,8 @@ let timer2 = new Timer(6000, "chrono-player2");
 timer1.updateTimer();
 timer2.updateTimer();
 
-const playerName1 = localStorage.getItem("player1") ? localStorage.getItem("player1") : "Joueur 1";
-const playerName2 = localStorage.getItem("player2") ? localStorage.getItem("player2") : "Joueur 2";
+let playerName1 = localStorage.getItem("player1") ? localStorage.getItem("player1") : "Joueur 1";
+let playerName2 = localStorage.getItem("player2") ? localStorage.getItem("player2") : "Joueur 2";
 document.getElementById("player-results-quizz1").innerHTML = playerName1;
 document.getElementById("player-results-quizz2").innerHTML = playerName2;
 
