@@ -272,12 +272,10 @@ button {
     text-decoration: underline;
     text-align: center;
     background-color: #8A817C;
-    width: 90%;
-    margin-left: 5%;
-    margin-right: 5%;
-    padding-bottom: 20px;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
+    justify-content: center;
+    padding: 27px 0;
 }
 
 .explanation_jeu {
@@ -286,11 +284,16 @@ button {
     text-align: center;
     background-color: #c4c0bd;
     justify-content: center;
-    width: 90%;
-    padding-top: 3%;
-    margin-left: 5%;
-    margin-right: 5%;
-    margin-bottom: 40px;
+    padding: 20px 0;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
+}
+
+.regle, .explanation_jeu {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.logo {
+    width: 190px;
 }
