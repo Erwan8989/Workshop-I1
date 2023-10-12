@@ -10,7 +10,7 @@ function main() {
 
 // Fonction pour afficher une seule question
 function getOneQuestion(questions, ii) {
-    if (i === 3) {
+    if (i === 12) {
         finish();
     }
 
