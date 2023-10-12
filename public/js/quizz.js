@@ -59,11 +59,11 @@ function getOneQuestion(questions, ii) {
 
             if (reponses[j] === bonneReponse) {
                 if (playerName === "player1") {
-                    timer1.addTime(1000);
+                    timer1.addTime(500);
                     joueur1Add.style.display = "flex";
                     chronoPlayer1.style.color = "green";
                 } else {
-                    timer2.addTime(1000);
+                    timer2.addTime(500);
                     joueur2Add.style.display = "flex";
                     chronoPlayer2.style.color = "green";
                 }
