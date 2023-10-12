@@ -8,7 +8,7 @@ function main() {
 
 // Fonction pour afficher une seule question
 function getOneQuestion(questions, ii) {
-    if (i === 12) {
+    if (i === 3) {
         finish();
     }
 
@@ -191,9 +191,6 @@ let joueur1Add = document.getElementById("joueur1-add");
 let joueur2Add = document.getElementById("joueur2-add");
 let joueur1Remove = document.getElementById("joueur1-remove");
 let joueur2Remove = document.getElementById("joueur2-remove");
-
-let timer1 = new Timer(6000, "chrono-player1");
-let timer2 = new Timer(6000, "chrono-player2");
 
 timer1.updateTimer();
 timer2.updateTimer();

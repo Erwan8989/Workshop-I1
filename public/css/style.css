@@ -11,11 +11,11 @@
 }
 
 .col1 {
-    border-right: 5px solid #16c9c9;
+    border-right: 5px solid #1d7fa1;
 }
 
 .col2 {
-    border-left: 5px solid #ef2929;
+    border-left: 5px solid #c0345d;
 }
 
 nav {
@@ -82,7 +82,6 @@ button {
 .start-btn {
     margin: 30px auto;
     width: fit-content;
-    background-color: green !important;
 }
 
 
@@ -157,11 +156,11 @@ button {
 }
 
 .player1 {
-    color: #114B5F;
+    color: #1d7fa1;
 }
 
 .player2 {
-    color: #AB4E68;
+    color: #c0345d;
 }
 
 /****   OTHER ****/
@@ -232,19 +231,6 @@ button {
     border-radius: 5em;
 }
 
-.percentage {
-    font-size: 3rem;
-    font-weight: bold;
-    text-align: center;
-    color: #f00;
-    background-color: #c4c0bd;
-    width: 75%;
-    margin-left: 15%;
-    margin-right: 5%;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-}
-
 .explanation {
     font-size: large;
     text-align: center;
@@ -257,6 +243,19 @@ button {
     margin-bottom: 40px;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
+}
+
+.percentage {
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+    color: #c0345d;
+    background-color: #c4c0bd;
+    width: 75%;
+    margin-left: 15%;
+    margin-right: 5%;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
 }
 
 .texte {
