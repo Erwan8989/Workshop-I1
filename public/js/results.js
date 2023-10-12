@@ -38,95 +38,87 @@ if (isPlayer1winner() === true) {
 }
 
 
-function getAnsweredQuestions(){
+function getAnsweredQuestions() {
     const questions = JSON.parse(localStorage.getItem("questions"));
     let answeredQuestions = [];
-    
-    for(let i = 0;  i < questions.length; i++) {
-        if(questions[i]["reponse_donnees"]){
+
+    for (let i = 0; i < questions.length; i++) {
+        if (questions[i]["reponse_donnees"]) {
             answeredQuestions.push(questions[i]);
-        } else{
+        } else {
             break;
         }
     }
     return answeredQuestions;
 }
 
-function isIntEven(number){
+function isIntEven(number) {
 
     number = parseInt(number);
 
-    if(number%2 === 0){
-        return true;
-    }else{
-        return false;
-    }
+    return number % 2 === 0;
 }
 
 
-function constructQuestionRecap(answeredQuestions){
+function constructQuestionRecap(answeredQuestions) {
 
     const block = document.getElementById("game-recap");
     var sections = "";
 
-    for(var i = 0; i < answeredQuestions.length; i++){
+    for (var i = 0; i < answeredQuestions.length; i++) {
         var questionNumber = constructQuestionNumber(i);
-        var questionText = '<div class="question-text">' + answeredQuestions[i]["description"]+'</div>';
-        var questionExplanation = '<div class="question-explanation">'+ answeredQuestions[i]["explication"] +'</div>';
+        var questionText = '<div class="question-text">' + answeredQuestions[i]["description"] + '</div>';
+        var questionExplanation = '<div class="question-explanation">' + answeredQuestions[i]["explication"] + '</div>';
 
         var questionResponse = constructQuestionButtons(answeredQuestions[i]);
 
         var questionElement = questionNumber + questionText + questionResponse + questionExplanation;
 
 
-        if(isIntEven(i)){
-           var questionSection = '<div class="question-section">'+ questionElement+'</div>';
-        }else{
-            var questionSection = '<div class="question-section left">'+ questionElement+'</div>';
+        if (isIntEven(i)) {
+            var questionSection = '<div class="question-section">' + questionElement + '</div>';
+        } else {
+            var questionSection = '<div class="question-section left">' + questionElement + '</div>';
         }
 
         sections += questionSection
     }
-
-
     block.innerHTML = sections;
 }
 
 
-function constructQuestionNumber(i){
-    if(isIntEven(i)){
+function constructQuestionNumber(i) {
+    if (isIntEven(i)) {
         var questionNumber = '<div class="question-number blue">Question ' + i + '</div>';
-    }else {
+    } else {
         var questionNumber = '<div class="question-number red">Question ' + i + '</div>';
     }
 
     return questionNumber;
 }
 
-
-function constructQuestionButtons(question){
+function constructQuestionButtons(question) {
     var buttons = "";
 
     console.log(question["reponses"]);
 
-    for(var i = 0; i < question["reponses"].length; i++){
-        if(question["reponses"][i] === question["bonne_reponse"]){
-            buttons += '<button class="btn btn-success" type="button">'+ question["reponses"][i] +'</button>';
-        }else if(question["reponses"][i] === question["reponse_donnees"]) {
-            buttons += '<button class="btn btn-danger" type="button">'+question["reponses"][i]+'</button>';
-        }else{
-            buttons += '<button class="btn btn-info" type="button">'+question["reponses"][i]+'</button>'
+    for (var i = 0; i < question["reponses"].length; i++) {
+        if (question["reponses"][i] === question["bonne_reponse"]) {
+            buttons += '<button class="btn btn-success" type="button">' + question["reponses"][i] + '</button>';
+        } else if (question["reponses"][i] === question["reponse_donnees"]) {
+            buttons += '<button class="btn btn-danger" type="button">' + question["reponses"][i] + '</button>';
+        } else {
+            buttons += '<button class="btn btn-info" type="button">' + question["reponses"][i] + '</button>'
         }
     }
 
-    var questionResponses = '<div class="question-response">'+ buttons +'</div>';
-    
+    var questionResponses = '<div class="question-response">' + buttons + '</div>';
 
-    return questionResponses; 
+    return questionResponses;
 }
 
 
-function questionObjectReorder(question){
+function questionObjectReorder(question) {
 
     var responses = [];
 
@@ -134,11 +126,11 @@ function questionObjectReorder(question){
     responses.push(question["reponse_2"]);
     delete question["reponse_2"];
 
-    if(question["reponse_3"]){
+    if (question["reponse_3"]) {
         responses.push(question["reponse_3"]);
         delete question["reponse_3"];
     }
-    if(question["reponse_4"]){
+    if (question["reponse_4"]) {
         responses.push(question["reponse_4"]);
         delete question["reponse_4"];
     }
@@ -148,10 +140,10 @@ function questionObjectReorder(question){
     return question;
 }
 
-function reorderQuestionsArray(array){
+function reorderQuestionsArray(array) {
     var reorderedQuestions = [];
 
-    for(var i=0; i<array.length; i++){
+    for (var i = 0; i < array.length; i++) {
         reorderedQuestions[i] = questionObjectReorder(array[i]);
     }
 
@@ -159,9 +151,6 @@ function reorderQuestionsArray(array){
 
     return reorderedQuestions;
 }
-
-
-
 
 joueur1.innerHTML = namePlayer1;
 joueur2.innerHTML = namePlayer2;
