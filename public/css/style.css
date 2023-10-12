@@ -240,10 +240,6 @@ button {
     border-radius: 5em;
 }
 
-body{
-    background-color: #e0afa0;
-}
-
 .percentage {
     font-size: 3rem; /* Taille de la police à personnaliser */
     font-weight: bold;
