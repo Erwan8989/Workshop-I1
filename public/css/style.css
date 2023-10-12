@@ -226,3 +226,16 @@ button {
     justify-content: center;
     align-items: center;
 }
+
+.first-panel {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 15px;
+    width: 100%;
+}
+
+.parag {
+    width: 20%;
+    background-color: #d9d9d9;
+    border-radius: 5em;
+}
