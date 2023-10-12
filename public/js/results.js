@@ -2,7 +2,7 @@ function isPlayer1winner() {
     if (finalTime1 < finalTime2) {
         return false;
     } else if (finalTime1 === finalTime2) {
-        finalTime2 += 1;
+        finalTime2 -= 1;
         localStorage.setItem("finalTime2", finalTime2);
         return true;
     } else {
