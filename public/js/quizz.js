@@ -3,6 +3,8 @@ function main() {
     getQuestion();
 
     var localStorageQuestions = localStorage.getItem("questions");
+
+    console.log(localStorageQuestions);
     return JSON.parse(localStorageQuestions);
 }
 
@@ -162,7 +164,7 @@ function player1Round() {
     player1.style.opacity = "1";
     player2.style.opacity = "0.25";
     cardQuizzQuestion.style.display = "block";
-    cardQuizzQuestion.style.borderColor = "#1d7fa1";
+    cardQuizzQuestion.style.borderColor = "#16c9c9";
     playerName = "player1";
     timer1.start();
 }
@@ -173,7 +175,7 @@ function player2Round() {
     player1.style.opacity = "0.25";
     player2.style.opacity = "1";
     cardQuizzQuestion.style.display = "block";
-    cardQuizzQuestion.style.borderColor = "#c0345d";
+    cardQuizzQuestion.style.borderColor = "#ef2929";
     playerName = "player2";
     timer2.start();
 }

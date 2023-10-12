@@ -37,6 +37,27 @@ if (isPlayer1winner() === true) {
     win.innerHTML = namePlayer2 + " a gagné 🎉";
 }
 
+
+function getAnsweredQuestions(){
+    const questions = JSON.parse(localStorage.getItem("questions"));
+    let answeredQuestions = [];
+
+    console.log(questions);
+    
+    for(let i = 0;  i < questions.length; i++) {
+        console.log(questions[i]["reponse_donnees"]);
+        if(questions[i]["reponse_donnees"]){
+            break;
+        } else{
+             answeredQuestions.push(questions[i]);
+        }
+    }
+    return answeredQuestions;
+}
+
+console.log("ttt");
+
+
 joueur1.innerHTML = namePlayer1;
 joueur2.innerHTML = namePlayer2;
 
@@ -45,3 +66,9 @@ playerTimeResults2.innerHTML = timer2.formatTime(finalTime2);
 
 player1Score.innerHTML = isFirstLetterVowel(namePlayer1) ? "Score d'" + namePlayer1 : "Score de " + namePlayer1;
 player2Score.innerHTML = isFirstLetterVowel(namePlayer2) ? "Score d' " + namePlayer2 : "Score de " + namePlayer2;
+
+
+const answeredQuestions = getAnsweredQuestions()
+
+console.log("outside");
+console.log(answeredQuestions);
