@@ -88,10 +88,11 @@ function constructQuestionRecap(answeredQuestions) {
 
 
 function constructQuestionNumber(i) {
+    let number = 1 + i;
     if (isIntEven(i)) {
-        var questionNumber = '<div class="question-number blue">Question ' + i + '</div>';
+        var questionNumber = '<div class="question-number blue">Question ' + number + '</div>';
     } else {
-        var questionNumber = '<div class="question-number red">Question ' + i + '</div>';
+        var questionNumber = '<div class="question-number red">Question ' + number + '</div>';
     }
 
     return questionNumber;
