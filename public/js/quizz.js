@@ -8,7 +8,7 @@ function main() {
 
 // Fonction pour afficher une seule question
 function getOneQuestion(questions, ii) {
-    if (i === 12) {
+    if (i === 3) {
         finish();
     }
 
@@ -192,9 +192,6 @@ let joueur2Add = document.getElementById("joueur2-add");
 let joueur1Remove = document.getElementById("joueur1-remove");
 let joueur2Remove = document.getElementById("joueur2-remove");
 
-let timer1 = new Timer(6000, "chrono-player1");
-let timer2 = new Timer(6000, "chrono-player2");
-
 timer1.updateTimer();
 timer2.updateTimer();
 
@@ -206,7 +203,7 @@ document.getElementById("player-results-quizz2").innerHTML = playerName2;
 
 let questionText = document.getElementById("question-text");
 
-var btn_start = document.getElementsByClassName("btn-start")[0];
+var btn_start = document.getElementById("btn-start");
 btn_start.addEventListener("click", start);
 
 var player1 = document.getElementsByClassName("col1")[0];
