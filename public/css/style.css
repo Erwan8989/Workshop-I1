@@ -245,8 +245,7 @@ button {
     font-weight: bold;
     text-align: center;
     color: #f00;
-    background-color: #8A817C;
-    opacity: 50%;
+    background-color: #c4c0bd;
     width: 75%;
     margin-left: 15%;
     margin-right: 5%;
@@ -256,7 +255,6 @@ button {
 
 .explanation {
     font-size: large;
-    color: #333;
     text-align: center;
     background-color: #8A817C;
     justify-content:center;
@@ -275,4 +273,33 @@ button {
     justify-content: center;
     margin-bottom: 30px;
     font-weight: bold;
+}
+
+.regle {
+    font-size: large;
+    font-weight: bold;
+    text-decoration: underline;
+    text-align: center;
+    background-color: #8A817C;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    padding-bottom: 20px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.explanation_jeu {
+    font-size: large;
+    color: #333;
+    text-align: center;
+    background-color: #c4c0bd;
+    justify-content:center;
+    width: 90%;
+    padding-top: 3%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 40px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
 }
