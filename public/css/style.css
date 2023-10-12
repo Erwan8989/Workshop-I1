@@ -71,6 +71,7 @@ button {
 .response0, .response1, .response2, .response3 {
     font-size: 30px;
     background-color: #16c9c9 !important;
+    flex: 1;
 }
 
 .response-block {
@@ -83,6 +84,18 @@ button {
     margin: 30px auto;
     width: fit-content;
 }
+
+.response-block {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.response-block .col {
+    flex: 1;
+    margin: 5px;
+    min-width: 0;
+}
+
 
 
 /**************** PAGE RULTATS **********************/
@@ -300,4 +313,8 @@ button {
 
 .card-body-shadow {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.response-block {
+
 }
