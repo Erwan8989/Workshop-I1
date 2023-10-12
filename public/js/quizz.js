@@ -206,7 +206,7 @@ document.getElementById("player-results-quizz2").innerHTML = playerName2;
 
 let questionText = document.getElementById("question-text");
 
-var btn_start = document.getElementById("btn-start");
+var btn_start = document.getElementsByClassName("btn-start")[0];
 btn_start.addEventListener("click", start);
 
 var player1 = document.getElementsByClassName("col1")[0];
