@@ -6,29 +6,100 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
   <link rel="stylesheet" href="../css/style.css" crossorigin="anonymous">
 
-  <title>Accueil</title>
+  <title>HarassTick Home</title>
 </head>
 <body>
-  <nav class="navbar navbar-light" style="background-color: #7c3b27">
+  <nav class="navbar navbar-light" style="background-color: #7c3b27; margin-bottom: 50px; width: 100%;  ">
     <a class="navbar-brand" href="../../index.php">
       <img src="../images/harasstick.png" width="140px" height="110px" class="d-inline-block align-top" alt="">
     </a>
     <a href="parameters.html" style="color: black; text-decoration: none;">
-      <h2><strong>JOUER</strong></h2>
+      <h1><strong>JOUER</strong></h1>
     </a>
     <div><i class="fa-sharp fa-regular fa-user"></i>Benevole</div>
   </nav>
-  <div class="first-panel" style="display: flex; flex-direction: column; justify-content:center;">
-    <div style="display: flex; justify-content:space-evenly; width: 100%;">
-      <div class="navbar parag">38.5% des femmes du milieu professionnel sont victimes de comportements sexistes</div>
-      <div class="navbar parag">14.0% des hommes du milieu professionnel sont victimes de comportements sexistes</div>
-    </div>
-    <p style="margin: auto; padding: 3%;">QUELQUES CHIFFRES ALARMANTS SUR LA SITUATION EN FRANCE</p>
-    <div style="display: flex; justify-content:space-evenly; width: 100%;">
-      <div class="navbar parag"> En 2018, 12 % des femmes et 2 % des hommes déclarent avoir été victimes de harcèlement sexuel au cours des 12 derniers mois dans leur emploi</div>
-      <div class="navbar parag">Le harcèlement provient dans 40 %  des cas de collègues, 18 % de supérieurs directs et 22 % de l’employeur</div>
-      <div class="navbar parag">En 2019, 57 % des femmes et 27 % des hommes déclarent avoir déjà été victime de harcèlement sexuel dans le monde professionnel.</div>
-    </div>
+  <style>
+    body{
+    background-color: #e0afa0;
+    }
+    
+    .percentage {
+    font-size: 3rem; /* Taille de la police à personnaliser */
+    font-weight: bold;
+    text-align: center;
+    color: #f00; /* Couleur du texte à personnaliser */
+    background-color: #8A817C;
+    opacity: 50%;
+    width: 75%;
+    margin-left: 15%;
+    margin-right: 5%;
+    }
+
+    /* Style de l'explication en dessous */
+    .explanation {
+    font-size: large; /* Taille de la police à personnaliser */
+    color: #333; /* Couleur du texte à personnaliser */
+    text-align: center;
+    background-color: #8A817C;
+    justify-content:center;
+    width: 75%;
+    padding: 10px;
+    margin-left: 15%;
+    margin-right: 5%;
+    margin-bottom: 40px;
+    }
+
+    .texte {
+      font-size: large;
+      text-align: center;
+      justify-content: center;
+      margin-bottom: 30px;
+      font: bolder;
+    }
+
+  </style>
+  <body>
+  <div class="texte">
+    <strong>Pour vous rendre compte de la place que prend le harcèlment sexuel au travail, voici quelques chiffres très représentatifs :</strong>
+  </div>
+  <div style="display: flex; width: 100%; justify-content: space-evenly;">
+    <div class="choc-data">
+        <div class="percentage">38,5%</div>
+        <div class="explanation">des femmes du milieu professionnel sont victimes de comportements sexistes.</div>
+    </div>  
+    <div class="choc-data">
+      <div class="percentage">14%</div>
+      <div class="explanation">des hommes du milieu professionnel sont victimes de comportements sexistes.</div>
+    </div>  
+  </div>
+  <div style="display: flex; width: 100%; justify-content: space-evenly;">
+    <div class="choc-data">
+        <div class="percentage">57%</div>
+        <div class="explanation">des femmes déclarent avoir déjà été victime de harcèlement sexuel dans le monde professionnel. (2019)</div>
+    </div>  
+    <div class="choc-data">
+      <div class="percentage">27%</div>
+      <div class="explanation">des hommes déclarent avoir déjà été victime de harcèlement sexuel dans le monde professionnel. (2019)</div>
+    </div>  
+  </div>
+  <div style="display: flex; width: 100%; justify-content: center;"> 
+    <div class="choc-data">
+      <div class="percentage">QUI ?</div>
+      <div class="explanation">Le harcèlement provient dans 40 %  des cas de collègues, 18 % de supérieurs directs et 22 % de l’employeur</div>
+    </div>  
+  </div>
+  <div class="texte" style="text-decoration: underline;">
+    <br><br><strong>Pour lutter contre ce fléau au travail, nous vous mettons au défi de gagner le jeu dont voici les règles :</strong>
+  </div>
+  <div class="texte">
+    <strong>C'est un duel chronométré, vous devrez chacun répondre à 6 questions en 1 minute. <br><br> Une réponse juste vous fait gagner 10s
+    supplémentaires pour répondre aux questions suivantes. <br><br>En revanche, une mauvaise réponse vous fera perdre 10s au chronomètre.<br><br>
+    Soyez concentrés, choisissez vos réponses avec attention car celui qui finit la partie avec le moins de temps à sont chronomètre aura perdu.<br><br><br></strong>
+  </div>
+  <div class="texte">
+    <a href="parameters.html" style="color: black; text-decoration: none;">
+     <h1><strong>JOUER</strong></h1>
+    </a>
   </div>
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
