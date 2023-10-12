@@ -186,7 +186,11 @@ button {
 }
 
 .red {
-    color: red;
+    color: #c0345d;
+}
+
+.blue {
+    color: #1d7fa1;
 }
 
 .green {
