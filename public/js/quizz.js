@@ -162,7 +162,7 @@ function player1Round() {
     player1.style.opacity = "1";
     player2.style.opacity = "0.25";
     cardQuizzQuestion.style.display = "block";
-    cardQuizzQuestion.style.borderColor = "#16c9c9";
+    cardQuizzQuestion.style.borderColor = "#1d7fa1";
     playerName = "player1";
     timer1.start();
 }
@@ -173,7 +173,7 @@ function player2Round() {
     player1.style.opacity = "0.25";
     player2.style.opacity = "1";
     cardQuizzQuestion.style.display = "block";
-    cardQuizzQuestion.style.borderColor = "#ef2929";
+    cardQuizzQuestion.style.borderColor = "#c0345d";
     playerName = "player2";
     timer2.start();
 }
