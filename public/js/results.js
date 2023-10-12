@@ -78,7 +78,7 @@ function constructQuestionRecap(answeredQuestions) {
         if (isIntEven(i)) {
             var questionSection = '<div class="question-section row">' + questionElement + '</div>';
         } else {
-            var questionSection = '<div class="question-section row left">' + questionElement + '</div>';
+            var questionSection = '<div class="question-section row">' + questionElement + '</div>';
         }
 
         sections += questionSection
@@ -90,9 +90,9 @@ function constructQuestionRecap(answeredQuestions) {
 function constructQuestionNumber(i) {
     let number = 1 + i;
     if (isIntEven(i)) {
-        var questionNumber = '<div class="question-number blue">Question ' + number + '</div>';
-    } else {
         var questionNumber = '<div class="question-number red">Question ' + number + '</div>';
+    } else {
+        var questionNumber = '<div class="question-number blue">Question ' + number + '</div>';
     }
 
     return questionNumber;
