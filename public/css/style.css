@@ -240,26 +240,24 @@ button {
     border-radius: 5em;
 }
 
-body{
-    background-color: #e0afa0;
-}
 
 .percentage {
-    font-size: 3rem; /* Taille de la police à personnaliser */
+    font-size: 3rem;
     font-weight: bold;
     text-align: center;
-    color: #f00; /* Couleur du texte à personnaliser */
+    color: #f00;
     background-color: #8A817C;
     opacity: 50%;
     width: 75%;
     margin-left: 15%;
     margin-right: 5%;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
 }
 
-/* Style de l'explication en dessous */
 .explanation {
-    font-size: large; /* Taille de la police à personnaliser */
-    color: #333; /* Couleur du texte à personnaliser */
+    font-size: large;
+    color: #333;
     text-align: center;
     background-color: #8A817C;
     justify-content:center;
@@ -268,6 +266,8 @@ body{
     margin-left: 15%;
     margin-right: 5%;
     margin-bottom: 40px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
 }
 
 .texte {
