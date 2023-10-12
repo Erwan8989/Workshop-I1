@@ -67,8 +67,8 @@ function constructQuestionRecap(answeredQuestions) {
 
     for (var i = 0; i < answeredQuestions.length; i++) {
         var questionNumber = constructQuestionNumber(i);
-        var questionText = '<div class="question-text">' + answeredQuestions[i]["description"] + '</div>';
-        var questionExplanation = '<div class="question-explanation">' + answeredQuestions[i]["explication"] + '</div>';
+        var questionText = '<div class="question-text col-12">' + answeredQuestions[i]["description"] + '</div>';
+        var questionExplanation = '<div class="question-explanation col-12">' + answeredQuestions[i]["explication"] + '</div>';
 
         var questionResponse = constructQuestionButtons(answeredQuestions[i]);
 
@@ -76,9 +76,9 @@ function constructQuestionRecap(answeredQuestions) {
 
 
         if (isIntEven(i)) {
-            var questionSection = '<div class="question-section">' + questionElement + '</div>';
+            var questionSection = '<div class="question-section row">' + questionElement + '</div>';
         } else {
-            var questionSection = '<div class="question-section left">' + questionElement + '</div>';
+            var questionSection = '<div class="question-section row left">' + questionElement + '</div>';
         }
 
         sections += questionSection
@@ -104,15 +104,15 @@ function constructQuestionButtons(question) {
 
     for (var i = 0; i < question["reponses"].length; i++) {
         if (question["reponses"][i] === question["bonne_reponse"]) {
-            buttons += '<button class="btn btn-success" type="button">' + question["reponses"][i] + '</button>';
+            buttons += '<button class="btn btn-success mr-3" type="button">' + question["reponses"][i] + '</button>';
         } else if (question["reponses"][i] === question["reponse_donnees"]) {
-            buttons += '<button class="btn btn-danger" type="button">' + question["reponses"][i] + '</button>';
+            buttons += '<button class="btn btn-danger mr-3" type="button">' + question["reponses"][i] + '</button>';
         } else {
-            buttons += '<button class="btn btn-info" type="button">' + question["reponses"][i] + '</button>'
+            buttons += '<button class="btn btn-info mr-3" type="button">' + question["reponses"][i] + '</button>'
         }
     }
 
-    var questionResponses = '<div class="question-response">' + buttons + '</div>';
+    var questionResponses = '<div class="question-response mx-auto">' + buttons + '</div>';
 
     return questionResponses;
 }
