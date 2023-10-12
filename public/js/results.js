@@ -101,7 +101,8 @@ function constructQuestionNumber(i) {
 function constructQuestionButtons(question) {
     var buttons = "";
 
-    console.log(question["reponses"]);
+    //console.log(question["reponses"]);
+
 
     for (var i = 0; i < question["reponses"].length; i++) {
         if (question["reponses"][i] === question["bonne_reponse"]) {
@@ -118,6 +119,50 @@ function constructQuestionButtons(question) {
     return questionResponses;
 }
 
+function getUsersGoodAnswerRate(answeredQuestions){
+    var userRates = [];
+    var goodAns1 = 0;
+    var ans1 = 0;
+
+    var goodAns2 = 0;
+    var ans2 = 0;
+
+    console.log("tetetet");
+
+
+
+    for(var i = 0; i < answeredQuestions.length; i++){
+        if(answeredQuestions[i]["bonne_reponse"] === answeredQuestions[i]["reponse_donnees"]) {
+            if(isIntEven(i)){
+                goodAns2++;
+            }
+            else{
+                goodAns1++;
+            }
+        }
+
+        if(isIntEven(i)){
+            ans2++;
+        }
+        else{
+            ans1++;
+        }
+
+    }
+
+   var user1rate = parseInt((goodAns1 / ans1 ) * 100);
+   var user2rate = parseInt((goodAns2 / ans2) * 100);
+
+   console.log(user1rate);
+   console.log(user2rate);
+
+    const player1rate = document.getElementById("player1-rate");
+    player1rate.textContent = user1rate + "%";
+
+    const player2rate = document.getElementById("player2-rate");
+    player2rate.textContent = user2rate + "%";
+    //(nombre de bonne / nombre total) * 10
+}
 
 function questionObjectReorder(question) {
 
@@ -131,6 +176,7 @@ function questionObjectReorder(question) {
         responses.push(question["reponse_3"]);
         delete question["reponse_3"];
     }
+    
     if (question["reponse_4"]) {
         responses.push(question["reponse_4"]);
         delete question["reponse_4"];
@@ -147,8 +193,6 @@ function reorderQuestionsArray(array) {
     for (var i = 0; i < array.length; i++) {
         reorderedQuestions[i] = questionObjectReorder(array[i]);
     }
-
-    console.log(reorderedQuestions);
 
     return reorderedQuestions;
 }
@@ -169,3 +213,5 @@ var answeredQuestions = getAnsweredQuestions()
 answeredQuestions = reorderQuestionsArray(answeredQuestions);
 
 constructQuestionRecap(answeredQuestions);
+
+getUsersGoodAnswerRate(answeredQuestions);
