@@ -15,7 +15,7 @@ function isFirstLetterVowel(str) {
 }
 
 const joueur1 = document.getElementById("player-results1");
-const joueur2 = document.getElementById("player-results1");
+const joueur2 = document.getElementById("player-results2");
 
 const playerTimeResults1 = document.getElementById("player-time-results1");
 const playerTimeResults2 = document.getElementById("player-time-results2");
@@ -26,8 +26,8 @@ const player2Score = document.getElementsByClassName("player2-score")[0];
 let finalTime1 = localStorage.getItem("finalTime1");
 let finalTime2 = localStorage.getItem("finalTime2");
 
-let namePlayer1 = localStorage.getItem("player1") ? localStorage.getItem("player1") : "Joueur 1";
-let namePlayer2 = localStorage.getItem("player2") ? localStorage.getItem("player2") : "Joueur 2";
+let namePlayer1 = localStorage.getItem("player1");
+let namePlayer2 = localStorage.getItem("player2");
 
 const win = document.getElementsByClassName("win")[0];
 
