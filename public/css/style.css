@@ -110,6 +110,7 @@ button {
     display: flex;
     justify-content: flex-end;
     background-color: rgba(17, 75, 95, 0.1);
+    text-align: right;
 }
 
 

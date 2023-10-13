@@ -157,10 +157,10 @@ function getUsersGoodAnswerRate(answeredQuestions){
    console.log(user2rate);
 
     const player1rate = document.getElementById("player1-rate");
-    player1rate.textContent = user1rate + "%";
+    player1rate.textContent = user2rate + "%";
 
     const player2rate = document.getElementById("player2-rate");
-    player2rate.textContent = user2rate + "%";
+    player2rate.textContent = user1rate + "%";
     //(nombre de bonne / nombre total) * 10
 }
 
