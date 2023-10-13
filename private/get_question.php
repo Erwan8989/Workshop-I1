@@ -2,6 +2,10 @@
 
 include 'bdd.php';
 
+header("Access-Control-Allow-Origin: https://harasstic.000webhostapp.com");
+header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
+header("Access-Control-Allow-Headers: Content-Type");
+
 $get_question = new bdd();
 
 $response = $get_question->getQuestions();
@@ -13,7 +17,6 @@ $ret = array(
 );
 
 $ret = json_encode($ret);
-$ret = base64_encode($ret);
 
 header("Content-Type: text/html;charset=utf-8");
 header('Content-Length: ' . strlen($ret));

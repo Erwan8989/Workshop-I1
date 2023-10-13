@@ -101,9 +101,6 @@ function constructQuestionNumber(i) {
 function constructQuestionButtons(question) {
     var buttons = "";
 
-    //console.log(question["reponses"]);
-
-
     for (var i = 0; i < question["reponses"].length; i++) {
         if (question["reponses"][i] === question["bonne_reponse"]) {
             buttons += '<button class="btn btn-success mr-3" type="button">' + question["reponses"][i] + '</button>';
@@ -127,10 +124,6 @@ function getUsersGoodAnswerRate(answeredQuestions){
     var goodAns2 = 0;
     var ans2 = 0;
 
-    console.log("tetetet");
-
-
-
     for(var i = 0; i < answeredQuestions.length; i++){
         if(answeredQuestions[i]["bonne_reponse"] === answeredQuestions[i]["reponse_donnees"]) {
             if(isIntEven(i)){
@@ -152,9 +145,6 @@ function getUsersGoodAnswerRate(answeredQuestions){
 
    var user1rate = parseInt((goodAns1 / ans1 ) * 100);
    var user2rate = parseInt((goodAns2 / ans2) * 100);
-
-   console.log(user1rate);
-   console.log(user2rate);
 
     const player1rate = document.getElementById("player1-rate");
     player1rate.textContent = user2rate + "%";

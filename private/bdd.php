@@ -10,10 +10,10 @@ class bdd
 
     public function __construct()
     {
-        $this->serveur = "127.0.0.1";
-        $this->utilisateur = "root";
-        $this->motDePasse = "";
-        $this->baseDeDonnees = "workshop-i1";
+        $this->serveur = "localhost";
+        $this->utilisateur = "id21394024_root";
+        $this->motDePasse = "Knwoqpdk2002&";
+        $this->baseDeDonnees = "id21394024_workshop";
 
         $this->connexion = new mysqli($this->serveur, $this->utilisateur, $this->motDePasse, $this->baseDeDonnees);
 

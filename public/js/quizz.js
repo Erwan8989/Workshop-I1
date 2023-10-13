@@ -4,7 +4,6 @@ function main() {
 
     var localStorageQuestions = localStorage.getItem("questions");
 
-    console.log(localStorageQuestions);
     return JSON.parse(localStorageQuestions);
 }
 
